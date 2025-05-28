@@ -10,6 +10,7 @@ fn main() {
     characters();
     booleans();
     arrays();
+    tuple();
     forloopwithme();
     whileloopwithme();
     userprint(user, "kanishk", 1200);
@@ -25,10 +26,13 @@ fn integers() {
     let b: u32 = 20;
     // floating point number
     let c: f64 = 30.5;
+    // sufix annotation
+    let d = 32i32;
 
     println!("Signed integer: {}", a);
     println!("Unsigned integer: {}", b);
     println!("Floating point number: {}", c);
+    println!("Suffix annotation number: {}", d);
 }
 
 fn characters() {
@@ -42,7 +46,7 @@ fn characters() {
 }
 
 fn booleans(){
-    let is_true: bool = true;
+    let is_true = true;
     let is_false: bool = false;
 
     println!("Boolean true: {}", is_true);
@@ -60,6 +64,11 @@ fn arrays() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
     // Accessing elements in the array {:?} is used for debug formatting
     println!("Array elements: {:?}", arr);
+}
+
+fn tuple(){
+    let tup: (i32,&str,bool) = (23,"first",true);
+    println!("Tuple elements:{:?}", tup)
 }
 fn forloopwithme(){
     for i in 1..=10{
