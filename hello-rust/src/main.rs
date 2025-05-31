@@ -1,5 +1,5 @@
-use std::io;
 use rand::Rng;
+use std::io;
 fn main() {
     let mut user = "Alice";
     println!("Hello, {}!", user);
@@ -45,7 +45,7 @@ fn characters() {
     println!("Character 3: {}", e);
 }
 
-fn booleans(){
+fn booleans() {
     let is_true = true;
     let is_false: bool = false;
 
@@ -57,7 +57,6 @@ fn userprint(user: &str, sender: &str, time: i32) {
     println!("Hello, {user}! from {sender} at time @ {time} hours");
     // or we can use format! macro
     // println!("Hello, {}! from {} at time @ {} hours", user, sender, time);
-    
 }
 
 fn arrays() {
@@ -66,28 +65,30 @@ fn arrays() {
     println!("Array elements: {:?}", arr);
 }
 
-fn tuple(){
-    let tup: (i32,&str,bool) = (23,"first",true);
+fn tuple() {
+    let tup: (i32, &str, bool) = (23, "first", true);
     println!("Tuple elements:{:?}", tup)
 }
-fn forloopwithme(){
-    for i in 1..=10{
+fn forloopwithme() {
+    for i in 1..=10 {
         println!("Loop iteration: {}", i);
     }
 }
 
-fn whileloopwithme(){
+fn whileloopwithme() {
     let mut i = 1;
-    while i <= 12  {
+    while i <= 12 {
         println!("while loop interactions: {} ", i);
         i += 1;
     }
 }
 
-fn guessthenumber(){
+fn guessthenumber() {
     println!("Please enter a number: ");
     let mut guess = String::new();
-    io::stdin().read_line(&mut guess).expect("Failed to read line");
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
     // random number generating using the rand crate
     let secret_number = rand::rng().random_range(1..=100); // Generates a random number between 1 and 100
     guess = guess.trim().to_string(); // Trim whitespace and convert to String
